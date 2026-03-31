@@ -195,7 +195,7 @@ body {
   z-index: -1;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1201px) {
   .page.tech .header {
     overflow: visible;
     isolation: isolate;
@@ -378,9 +378,32 @@ body {
 }
 
 @media (min-width: 800px) and (max-width: 1200px) {
+  .page.tech .header__inner {
+    min-height: 75px;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+  }
+
+  .page.tech .header__hamburger,
+  .page.tech .header__brand,
+  .page.tech .header__contact-btn {
+    align-self: center;
+  }
+
   .page.tech .header__logo-image {
-    transform: scale(0.65);
-    transform-origin: left center;
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+    transform: none;
+  }
+
+  .page.tech .header__contact-btn {
+    min-height: 34px;
+    font-size: 0.78rem;
+    padding: 0.42rem 0.82rem;
+    border-width: 2px;
+    transform: none;
   }
 }
 
@@ -448,7 +471,7 @@ body {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .page.tech .header__hamburger {
     display: inline-flex;
     align-items: center;
@@ -5076,6 +5099,112 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 798.98px) {
+  .page.tech .cards--solutions {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .page.tech .card--solution {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'title icon'
+      'cta cta';
+    align-items: center;
+    column-gap: 0.85rem;
+    row-gap: 0.35rem;
+    padding: 1.05rem 1.1rem;
+  }
+
+  .page.tech .card--solution .card__icon {
+    grid-area: icon;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.9rem;
+  }
+
+  .page.tech .card--solution .card__title {
+    grid-area: title;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+
+  .page.tech .card--solution .card__text,
+  .page.tech .card--solution .card__bullets {
+    display: none;
+  }
+
+  .page.tech .card--solution .card__cta {
+    grid-area: cta;
+    margin-top: 0.15rem;
+    font-size: 0.95rem;
+    justify-self: start;
+    align-self: start;
+    width: fit-content;
+    text-align: left;
+  }
+
+  .page.tech .cards--services {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
+  }
+
+  .page.tech .cards--services .card,
+  .page.tech .cards--services .card[data-service-id='consulting'],
+  .page.tech .cards--services .card[data-service-id='security'],
+  .page.tech .cards--services .card[data-service-id='network'],
+  .page.tech .cards--services > .card:nth-child(4),
+  .page.tech .cards--services > .card:nth-child(5),
+  .page.tech .cards--services > .card:nth-child(6) {
+    margin-top: 0 !important;
+  }
+
+  .page.tech .card--service {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'title icon'
+      'cta cta';
+    align-items: center;
+    column-gap: 0.85rem;
+    row-gap: 0.35rem;
+    padding: 1.05rem 1.1rem;
+  }
+
+  .page.tech .card--service .card__icon {
+    grid-area: icon;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.9rem;
+  }
+
+  .page.tech .card--service .card__title {
+    grid-area: title;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+
+  .page.tech .card--service .card__text,
+  .page.tech .card--service .card__meta {
+    display: none;
+  }
+
+  .page.tech .card--service .card__cta {
+    grid-area: cta;
+    margin-top: 0.15rem;
+    justify-self: start;
+    width: fit-content;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+  }
+}
+
 /* Modern UI layout */
 .modern-page {
   min-height: 100vh;
@@ -5877,7 +6006,7 @@ body {
   }
 @media (min-width: 801px) and (max-width: 1200px) {
   .page.tech .header__hamburger {
-    transform: translateY(-20px);
+    transform: none;
   }
 }
 .page.tech .mobile-nav__panel {
