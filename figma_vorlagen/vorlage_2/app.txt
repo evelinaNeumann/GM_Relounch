@@ -1,0 +1,142 @@
+import { ArrowRight, Server, Cloud, Settings, Lightbulb, Leaf, Award } from 'lucide-react';
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 p-8">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl mb-12 text-gray-900 font-bold">Unsere Services</h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Colocation & Housing */}
+          <ServiceCard
+            icon={<Server className="w-8 h-8" />}
+            title="Colocation & Housing"
+            description="Rack-, Cage- und Raumlösungen für Ihre eigene Hardware in einem hochsicheren Datacenter."
+            features={[
+              "N+1 Strom mit Messung pro Rack",
+              "Carrier-neutral mit Peering-Anbindung",
+              "Zutrittskontrolle, Video & 24/7 Überwachung"
+            ]}
+            link="Weiterlesen"
+          />
+
+          {/* Cloud & Hosting */}
+          <ServiceCard
+            icon={<Cloud className="w-8 h-8" />}
+            title="Cloud & Hosting"
+            description="Virtuelle Server, Managed Kubernetes und skalierbare Speicherlösungen."
+            features={[
+              "VMware / KVM Virtualisierung",
+              "S3-kompatibel: Block & Object Storage",
+              "Versioniertes & verschlüsseltes Backup"
+            ]}
+            link="Weiterlesen"
+          />
+
+          {/* Managed Services */}
+          <ServiceCard
+            icon={<Settings className="w-8 h-8" />}
+            title="Managed Services"
+            description="Betrieb von Betriebssystem, Middleware und ausgewählten Applikationen."
+            features={[
+              "24/7 NOC Monitoring",
+              "Regelmäßige Patch-Management-Zyklen",
+              "Support mit Response-Zeiten nach SLA"
+            ]}
+            link="Weiterlesen"
+          />
+
+          {/* Consulting & Strategie */}
+          <ServiceCard
+            icon={<Lightbulb className="w-8 h-8" />}
+            title="Consulting & Strategie"
+            description="Strategie-, Technologie- und Complianceberatung für planbare IT-Investitionen."
+            features={[
+              "Strategie & Prozessberatung",
+              "Innovation & Technologie-Umsetzung",
+              "Compliance & Risk Management"
+            ]}
+            link="Weiterlesen"
+          />
+
+          {/* Nachhaltigkeit */}
+          <ServiceCard
+            icon={<Leaf className="w-8 h-8" />}
+            title="Nachhaltigkeit"
+            description="Nachhaltigkeit im Rechenzentrum bedeutet für GRASS-MERKUR messbare Fortschritte – von energieeffizientem Bau über zertifizierten Ökostrom bis zu HVO 100 für die Notstromanlagen."
+            features={[
+              "CO2-reduzierte Energieversorgung mit zertifiziertem Grünstrom",
+              "Hocheffiziente Klimasysteme mit Wärmerückgewinnung",
+              "Ressourcenschonende IT-Services",
+              "Download: Nachhaltigkeitskonzept 2025 (PDF)",
+              "Nachhaltigkeitstermin vereinbaren"
+            ]}
+            link="Weiterlesen"
+          />
+
+          {/* Unsere Vorteile */}
+          <ServiceCard
+            icon={<Award className="w-8 h-8" />}
+            title="Unsere Vorteile"
+            description="ISO 27001 zertifiziert · 24/7 deutscher Support · 99,99 % SLA Garantie · Redundante Systeme"
+            features={[
+              "ISO 27001 zertifiziert",
+              "24/7 deutscher Support",
+              "99,99 % SLA Garantie",
+              "Redundante Systeme"
+            ]}
+            link="Weiterlesen"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  link: string;
+}
+
+function ServiceCard({ icon, title, description, features, link }: ServiceCardProps) {
+  return (
+    <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col border border-gray-100 hover:border-teal-300">
+      {/* Icon Circle */}
+      <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform duration-300">
+        {icon}
+      </div>
+
+      {/* Title */}
+      <h2 className="text-2xl font-bold text-gray-900 mb-3">
+        {title}
+      </h2>
+
+      {/* Description */}
+      <p className="text-base text-gray-600 mb-6 leading-relaxed">
+        {description}
+      </p>
+
+      {/* Divider */}
+      <div className="w-12 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mb-6"></div>
+
+      {/* Features as bullet list */}
+      <ul className="space-y-3 mb-8 flex-grow">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-start gap-3 text-gray-700">
+            <div className="w-1.5 h-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+            <span className="text-sm leading-relaxed">{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Link Button */}
+      <button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-3 px-6 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 group/btn">
+        {link}
+        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+      </button>
+    </div>
+  );
+}
