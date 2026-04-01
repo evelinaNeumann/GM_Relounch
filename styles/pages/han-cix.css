@@ -5894,6 +5894,191 @@ body {
     }
   }
 
+.page.tech .mobile-nav__panel {
+  left: auto !important;
+  right: 0 !important;
+  position: fixed !important;
+  transform: none !important;
+  position: relative;
+  margin-left: auto;
+  right: 0;
+  left: auto;
+  width: min(66vw, 520px);
+  max-width: 66vw;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: rgb(23, 50, 64);
+  color: #ffffff;
+  border-radius: 18px 0 0 18px;
+  box-shadow: 0 40px 80px rgba(15, 18, 24, 0.35);
+  padding: 1rem 0.75rem 1.25rem;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2001;
+  overflow: visible;
+}
+
+.page.tech .mobile-nav__panel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60px;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 50, 64, 0.85) 0%,
+    rgba(23, 50, 64, 0.35) 45%,
+    rgba(23, 50, 64, 0) 100%
+  );
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.page.tech .mobile-nav {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 2000;
+}
+
+.page.tech .mobile-nav__head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.page.tech .mobile-nav__title,
+.page.tech .mobile-nav__close {
+  color: #ffffff;
+}
+
+.page.tech .mobile-nav__title {
+  font-size: 1.3em;
+  margin-left: auto;
+}
+
+.page.tech .mobile-nav__close {
+  margin-left: 0;
+  color: var(--color-accent);
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+}
+
+.page.tech .mobile-nav__list {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+}
+
+.page.tech .mobile-nav__list::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 40px);
+  height: calc(100vh - 40px);
+  max-height: calc(100vh - 40px);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 50, 64, 0.85) 0%,
+    rgba(23, 50, 64, 0.82) 18%,
+    rgba(23, 50, 64, 0.78) 34%,
+    rgba(23, 50, 64, 0.72) 48%,
+    rgba(23, 50, 64, 0.64) 60%,
+    rgba(23, 50, 64, 0.55) 70%,
+    rgba(23, 50, 64, 0.45) 78%,
+    rgba(23, 50, 64, 0.34) 85%,
+    rgba(23, 50, 64, 0.24) 90%,
+    rgba(23, 50, 64, 0.16) 94%,
+    rgba(23, 50, 64, 0.1) 97%,
+    rgba(23, 50, 64, 0.06) 99%,
+    rgba(23, 50, 64, 0) 100%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.page.tech .mobile-nav__backdrop {
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
+.page.tech .mobile-nav__parent,
+.page.tech .mobile-nav__link {
+  display: flex;
+  align-items: center;
+  background: rgb(23, 50, 64);
+  color: var(--color-accent);
+  border-radius: 999px;
+  padding: 0.7rem 0.9rem;
+  font-weight: 600;
+  font-size: 1.3em;
+  letter-spacing: 0.01em;
+  box-shadow: none;
+  border: 1px solid var(--color-accent);
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.page.tech .mobile-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+.page.tech .mobile-nav__parent:hover,
+.page.tech .mobile-nav__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page.tech .mobile-nav__chevron {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page.tech .mobile-nav__submenu {
+  background: #ffffff;
+  border-radius: 12px;
+  width: calc(100% - 2.1rem);
+  margin: 10px 0.65rem 0.85rem;
+  padding: 0.45rem 0.5rem 0.6rem;
+  border: 1px solid rgba(12, 151, 155, 0.4);
+}
+
+.page.tech .mobile-nav__sub-link {
+  display: block;
+  background: #ffffff;
+  color: #121216;
+  border-radius: 10px;
+  border: 1px solid rgba(12, 151, 155, 0.6);
+  margin: 10px 0;
+  padding: 0.6rem 0.7rem;
+  font-weight: 600;
+}
+
+.page.tech .mobile-nav__sub-link:hover {
+  background: rgba(12, 151, 155, 0.08);
+}
+
+.page.tech .mobile-nav__sub-desc {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(18, 18, 22, 0.7);
+  font-weight: 500;
+}
+
 
 
 
