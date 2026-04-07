@@ -1,11 +1,11 @@
 @media (min-width: 800px) and (max-width: 1200px) {
   .managed-services-page {
-    --managed-hero-card-height: 900px !important;
+    --managed-hero-card-height: 765px !important;
   }
 }
 @media (min-width: 800px) and (max-width: 1200px) {
   .managed-gallery__image {
-    height: 900px;
+    height: 765px;
     width: auto;
     object-fit: cover;
   }
@@ -1815,7 +1815,18 @@ body {
 /* Wide screens: pull the gallery slightly left (more breathing room on the right) */
 @media (min-width: 1200px) {
   .managed-services-page .hero__visual--managed-gallery {
+    align-self: stretch;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
     margin-right: clamp(1.25rem, 2.4vw, 3rem);
+  }
+
+  .managed-services-page .managed-gallery {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    min-height: var(--managed-hero-card-height);
   }
 }
 
@@ -2349,6 +2360,12 @@ body {
   height: 48px;
 }
 
+@media (max-width: 800px) {
+  .managed-services-page .managed-ms-split__icon {
+    display: none;
+  }
+}
+
 .managed-services-page .managed-ms-split__actions {
   margin-top: 0.65rem;
 }
@@ -2384,6 +2401,16 @@ body {
 .managed-services-page .managed-ms-split__badge-icon {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .managed-services-page .managed-ms-split__badge {
+    display: none;
+  }
+
+  .managed-services-page .managed-ms-split__badge-icon {
+    display: none;
+  }
 }
 
 /* Contact card */
@@ -2468,6 +2495,38 @@ body {
 
   .managed-services-page .managed-ms-contact__actions {
     justify-self: center;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .managed-services-page .managed-ms-contact {
+    grid-template-columns: 126px minmax(0, 1fr);
+    gap: 1.35rem;
+    justify-content: stretch;
+  }
+
+  .managed-services-page .managed-ms-contact__avatar {
+    width: 118px;
+    height: 118px;
+    font-size: 1.95rem;
+  }
+
+  .managed-services-page .managed-ms-contact__body {
+    min-width: 0;
+  }
+
+  .managed-services-page .managed-ms-contact__actions {
+    justify-content: flex-start;
+    align-self: start;
+    justify-self: start;
+    margin-left: 0;
+    width: auto;
+    grid-column: 2;
+  }
+
+  .managed-services-page .managed-ms-contact__actions .managed-ms-btn {
+    margin-left: 0;
+    max-width: 100%;
   }
 }
 
@@ -5727,3 +5786,90 @@ body {
       align-items: flex-start;
     }
   }
+
+@media (max-width: 499.98px) {
+  .page.business.managed-services-page {
+    --header-sticky-height: 68px;
+  }
+
+  .page.business.managed-services-page .header {
+    height: 68px;
+    min-height: 68px;
+    max-height: 68px;
+  }
+
+  .page.business.managed-services-page .header::before {
+    height: 68px;
+  }
+
+  .page.business.managed-services-page .header__inner {
+    min-height: 68px;
+    padding: 0.3rem 0.8rem;
+    gap: 0.55rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateY(0);
+  }
+
+  .page.business.managed-services-page .header__brand {
+    order: 1;
+    margin-left: 0;
+    transform: translateY(-1px);
+  }
+
+  .page.business.managed-services-page .header__logo-image {
+    height: 34px;
+    max-height: 34px;
+    width: auto;
+    transform: none;
+  }
+
+  .page.business.managed-services-page .header__hamburger {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    order: 0;
+    transform: translateY(-1px);
+    background-size: 42px 42px;
+  }
+
+  .page.business.managed-services-page .header__contact-btn {
+    order: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: none;
+    min-width: 92px;
+    min-height: 32px;
+    padding: 0.36rem 0.8rem;
+    font-size: 0.76rem;
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: 0;
+    line-height: 1.1;
+    transform: translateY(-1px);
+  }
+
+  .page.business.managed-services-page .footer--tealgrid .footer__inner.footer__inner--tealgrid {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .page.business.managed-services-page .footer--tealgrid .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem 1rem;
+  }
+
+  .page.business.managed-services-page .footer--tealgrid .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .page.business.managed-services-page .footer--tealgrid .footer__bottom {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 0.75rem;
+  }
+}

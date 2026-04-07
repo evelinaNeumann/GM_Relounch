@@ -10,7 +10,7 @@
     justify-content: center !important;
     height: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0 0 3px !important;
     box-sizing: border-box !important;
     transform: none !important;
   }
@@ -23,7 +23,7 @@
     justify-content: center !important;
     height: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0 0 3px !important;
     box-sizing: border-box !important;
     transform: none !important;
   }
@@ -36,7 +36,7 @@
     justify-content: center !important;
     height: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0 0 3px !important;
     box-sizing: border-box !important;
     /* Remove any transform that could offset */
     transform: none !important;
@@ -68,6 +68,11 @@
     flex-direction: row !important;
     align-items: stretch !important;
   }
+  .colocation-page .hero__content {
+    align-self: stretch !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
   .colocation-page .hero__inner--modern-simple > * {
     flex: 1 1 0 !important;
     min-width: 0 !important;
@@ -75,6 +80,7 @@
   }
   .colocation-page .hero__visual--managed-gallery,
   .colocation-page .managed-gallery {
+    align-self: stretch !important;
     height: 100% !important;
     min-height: 0 !important;
     max-height: none !important;
@@ -2034,7 +2040,12 @@ body {
 }
 
 /* Managed Services Page: teal background like the Figma mock */
+.page.colocation-page {
+  --header-sticky-height: 72px;
+}
+
 .page.colocation-page main {
+  padding-top: calc(var(--header-sticky-height) + 1.5rem);
   background:
     linear-gradient(180deg, #ffffff 0 15px, rgba(255, 255, 255, 0) 15px),
     radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.12), transparent 55%),
@@ -2044,9 +2055,34 @@ body {
 
 /* Managed Services: header should match page-layout width */
 .page.colocation-page .header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  overflow: visible;
   max-width: 1680px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+  .page.colocation-page .header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 26px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.58) 38%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
 }
 
 .page.colocation-page .header__contact-btn {
@@ -2356,6 +2392,14 @@ body {
 .colocation-page .managed-ms-split__badge-icon {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .colocation-page .managed-ms-split__icon,
+  .colocation-page .managed-ms-split__badge,
+  .colocation-page .managed-ms-split__badge-icon {
+    display: none;
+  }
 }
 
 /* Contact card */
@@ -2920,6 +2964,10 @@ body {
   justify-content: center;
 }
 
+.colocation-page .hero__inner--modern-simple .hero__content > * {
+  margin-left: 3px;
+}
+
 .page.tech .hero__content {
   margin-top: 1.5rem;
 }
@@ -2999,6 +3047,12 @@ body {
 
   .colocation-page .managed-gallery {
     box-shadow: 0 0 0 22px #ffffff;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .colocation-page .hero__visual--managed-gallery {
+    margin-top: 0 !important;
   }
 }
 
@@ -5697,3 +5751,90 @@ body {
       align-items: flex-start;
     }
   }
+
+@media (max-width: 499.98px) {
+  .page.business.colocation-page {
+    --header-sticky-height: 68px;
+  }
+
+  .page.business.colocation-page .header {
+    height: 68px;
+    min-height: 68px;
+    max-height: 68px;
+  }
+
+  .page.business.colocation-page .header::before {
+    height: 68px;
+  }
+
+  .page.business.colocation-page .header__inner {
+    min-height: 68px;
+    padding: 0.3rem 0.8rem;
+    gap: 0.55rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateY(0);
+  }
+
+  .page.business.colocation-page .header__brand {
+    order: 1;
+    margin-left: 0;
+    transform: translateY(-1px);
+  }
+
+  .page.business.colocation-page .header__logo-image {
+    height: 34px;
+    max-height: 34px;
+    width: auto;
+    transform: none;
+  }
+
+  .page.business.colocation-page .header__hamburger {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    order: 0;
+    transform: translateY(-1px);
+    background-size: 42px 42px;
+  }
+
+  .page.business.colocation-page .header__contact-btn {
+    order: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: none;
+    min-width: 92px;
+    min-height: 32px;
+    padding: 0.36rem 0.8rem;
+    font-size: 0.76rem;
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: 0;
+    line-height: 1.1;
+    transform: translateY(-1px);
+  }
+
+  .page.business.colocation-page .footer--tealgrid .footer__inner.footer__inner--tealgrid {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .page.business.colocation-page .footer--tealgrid .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem 1rem;
+  }
+
+  .page.business.colocation-page .footer--tealgrid .footer__brand {
+    grid-column: 1 / -1;
+  }
+
+  .page.business.colocation-page .footer--tealgrid .footer__bottom {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 0.75rem;
+  }
+}

@@ -197,14 +197,14 @@
               <div class="cert-business-hero__logos" aria-hidden="true">
                 <img src="./assets/icons.jpg" alt="Zertifizierungs-Icons" class="cert-business-hero__image" style="display:block;margin:auto;width:115%;height:auto;" loading="lazy" decoding="async" />
               </div>
-            </div>
-          </div>
 
-          <div class="cert-business-hero__highlights" aria-label="Kennzahlen">
-            <div class="cert-business-hero__highlight" v-for="item in heroHighlights" :key="item.label">
-              <div class="cert-business-hero__label">{{ item.label }}</div>
-              <div class="cert-business-hero__value">{{ item.value }}</div>
-              <div class="cert-business-hero__meta">{{ item.meta }}</div>
+              <div class="cert-business-hero__highlights" aria-label="Kennzahlen">
+                <div class="cert-business-hero__highlight" v-for="item in heroHighlights" :key="item.label">
+                  <div class="cert-business-hero__label">{{ item.label }}</div>
+                  <div class="cert-business-hero__value">{{ item.value }}</div>
+                  <div class="cert-business-hero__meta">{{ item.meta }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

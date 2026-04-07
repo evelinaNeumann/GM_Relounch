@@ -3258,7 +3258,7 @@ body {
   }
 
   .page.tech .header__inner {
-    padding: 0.8rem 0.75rem 0.6rem;
+    padding: 0.55rem 0.75rem 0.4rem;
     gap: 0.6rem;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -3271,6 +3271,7 @@ body {
     align-items: center;
     flex: 0 1 auto;
     min-width: 0;
+    transform: translateY(-2px);
   }
 
   .page.tech .header__logo-image {
@@ -3290,7 +3291,11 @@ body {
     padding: 0.5rem 0.95rem;
     border-width: 2px;
     line-height: 1.1;
-    transform: translateY(6px);
+    transform: translateY(2px);
+  }
+
+  .page.tech .header__hamburger {
+    transform: translateY(-2px);
   }
 
   .page.tech .nav {
@@ -4817,6 +4822,23 @@ body {
   }
 
   @media (max-width: 500px) {
+    .page.tech .header__inner {
+      padding-top: 0.4rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .page.tech .header__brand {
+      transform: translateY(-4px);
+    }
+
+    .page.tech .header__hamburger {
+      transform: translateY(-4px);
+    }
+
+    .page.tech .header__contact-btn {
+      transform: translateY(0);
+    }
+
     .page.tech .hero .hero__inner {
       min-height: auto;
       padding-top: 0.9rem;
